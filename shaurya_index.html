@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Misthii ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+min-height:100vh;
+overflow:hidden;
+
+background:linear-gradient(-45deg,#ff9a9e,#fecfef,#ffd1dc,#fad0c4);
+
+background-size:400% 400%;
+
+animation:bg 10s ease infinite;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+position:relative;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+
+50%{background-position:100% 50%;}
+
+100%{background-position:0% 50%;}
+
+}
+
+.container{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+#loginBox{
+
+width:100%;
+
+max-width:360px;
+
+padding:30px 25px;
+
+background:rgba(255,255,255,0.18);
+
+backdrop-filter:blur(18px);
+
+border-radius:28px;
+
+box-shadow:0 8px 35px rgba(255,255,255,.3);
+
+text-align:center;
+
+animation:fade 1.2s;
+
+z-index:2;
+
+}
+
+#loginBox h1{
+
+font-size:34px;
+
+color:white;
+
+margin-bottom:20px;
+
+text-shadow:0 0 20px hotpink;
+
+}
+
+#loginBox p{
+
+color:white;
+
+font-size:16px;
+
+margin-bottom:20px;
+
+}
+
+input{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+outline:none;
+
+border-radius:30px;
+
+font-size:17px;
+
+text-align:center;
+
+}
+
+button{
+
+width:100%;
+
+margin-top:18px;
+
+padding:15px;
+
+border:none;
+
+border-radius:30px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:white;
+
+color:#ff4f81;
+
+transition:0.4s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+#messageBox{
+
+display:none;
+
+position:absolute;
+
+width:92%;
+
+max-width:430px;
+
+padding:35px 25px;
+
+text-align:center;
+
+background:rgba(255,255,255,0.18);
+
+backdrop-filter:blur(18px);
+
+border-radius:28px;
+
+box-shadow:0 8px 40px rgba(255,255,255,.4);
+
+animation:pop 1.2s;
+
+z-index:2;
+
+}
+
+#messageBox h2{
+
+font-size:34px;
+
+color:white;
+
+margin-bottom:20px;
+
+text-shadow:0 0 20px hotpink;
+
+}
+
+#typing{
+
+font-size:21px;
+
+color:white;
+
+line-height:1.8;
+
+min-height:250px;
+
+}
+
+#love{
+
+display:none;
+
+font-size:32px;
+
+margin-top:25px;
+
+color:white;
+
+animation:glow 1.5s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:0 0 10px white;
+
+}
+
+to{
+
+text-shadow:0 0 35px hotpink;
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes pop{
+
+0%{
+
+transform:scale(.4);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.heart{
+
+position:absolute;
+
+font-size:20px;
+
+color:white;
+
+animation:float linear forwards;
+
+opacity:.8;
+
+pointer-events:none;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0) scale(.6);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-110vh) scale(1.4);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="loginBox">
+
+<h1>❤️ For Misthii ❤️</h1>
+
+<p>A small surprise made with love by Shaurya ✨</p>
+
+<input type="password" id="pass" placeholder="Enter Secret Password">
+
+<button onclick="checkPass()">Open My Heart 💖</button>
+
+</div>
+
+</div>
+
+
+
+<div id="messageBox">
+
+<h2>✨ Dear Misthii ✨</h2>
+
+<div id="typing"></div>
+
+<div id="love">
+
+❤️ I Love You Misthii ❤️
+
+</div>
+
+</div>
+
+
+
+<script>
+
+const msg=`You are the sweetest part of my life, Misthii ❤️
+
+Every moment with you feels magical and beautiful.
+
+Your smile brings happiness to my heart and peace to my soul.
+
+I may not be perfect, but my feelings for you are pure and endless.
+
+Thank you for being in my life.
+
+Forever Yours,
+
+❤️ Shaurya ❤️`;
+
+
+
+function checkPass(){
+
+let p=document.getElementById("pass").value;
+
+if(p==="Misthii@31"){
+
+document.getElementById("loginBox").style.display="none";
+
+document.getElementById("messageBox").style.display="block";
+
+typeWriter();
+
+}
+
+else{
+
+alert("Wrong Password ❤️");
+
+}
+
+}
+
+
+
+function typeWriter(){
+
+let i=0;
+
+const speed=45;
+
+const typing=document.getElementById("typing");
+
+
+
+function type(){
+
+if(i<msg.length){
+
+if(msg.charAt(i)==="\n"){
+
+typing.innerHTML+="<br>";
+
+}
+
+else{
+
+typing.innerHTML+=msg.charAt(i);
+
+}
+
+i++;
+
+setTimeout(type,speed);
+
+}
+
+else{
+
+document.getElementById("love").style.display="block";
+
+}
+
+}
+
+type();
+
+}
+
+
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+
+
+const hearts=["❤️","💖","💕","💗","🌸"];
+
+
+
+heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+
+
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.bottom="-20px";
+
+
+
+heart.style.fontSize=(20+Math.random()*20)+"px";
+
+
+
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+
+
+document.body.appendChild(heart);
+
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+}
+
+
+
+setInterval(createHeart,250);
+
+
+
+</script>
+
+</body>
+
+</html>
